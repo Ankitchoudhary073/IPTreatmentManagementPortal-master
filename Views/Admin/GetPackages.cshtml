@@ -1,0 +1,56 @@
+﻿@model IEnumerable<IPTreatmentManagementPortal.Models.IPTreatmentPackages>
+
+@{
+    ViewData["Title"] = "GetPackages";
+}
+
+<h1>Treatment Packages</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AilmentCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatmentPackageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatmentDuration)
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AilmentCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreatmentPackageName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestDetails)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreatmentDuration)
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+
+    <a asp-action="Index">Back to List</a>
+</div>

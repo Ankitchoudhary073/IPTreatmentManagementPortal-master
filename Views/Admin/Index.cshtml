@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Welcome Admin</h1>
+
+
+@using (Html.BeginForm("GetPackages", "Admin", FormMethod.Get))
+{
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+
+            <input type="submit" value="Service Packages" class="btn btn-default" />
+        </div>
+    </div>
+
+}
+
+@using (Html.BeginForm("ChooseTreatmentPlan", "Admin", FormMethod.Get))
+{
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+
+            <input type="submit" value="Choose Treatment Plan" class="btn btn-default" />
+        </div>
+    </div>
+
+}
+@using (Html.BeginForm("GetRecords", "Admin", FormMethod.Get))
+{
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+
+            <input type="submit" value="View Patient List" class="btn btn-default" />
+        </div>
+    </div>
+
+}

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<IPTreatmentManagementPortal.Models.PatientRecords>
+
+@{
+    ViewData["Title"] = "GetRecords";
+}
+
+<h1>Patient Records</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ailment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsurerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ailment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Package)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Specialist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsurerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Balance)
+            </td>
+            @if (item.InsurerName == null)
+            {
+                <td>
+
+                    <a asp-action="GetInsuranceDetails" asp-route-id="@item.PatientId">Mark Completion</a>
+                </td>
+            }
+
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+
+    <a asp-action="Index">Back to List</a>
+</div>
